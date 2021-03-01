@@ -1,6 +1,9 @@
 import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
+import { Link } from 'react-router-dom'
+
+
 
 const ArticlesMainPage = ({ articlesMainPage }) => {
 
@@ -14,8 +17,9 @@ const ArticlesMainPage = ({ articlesMainPage }) => {
                   <Card.Text>
                     Some quick example text to build on the card title and make up the bulk of
                     the card's content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
+                  </Card.Text>         
+            
+                  <Link to={`/article/${item.id}`} className='btn btn-primary btn-details'> details</Link>
                 </Card.Body>
               </Card>
             )}

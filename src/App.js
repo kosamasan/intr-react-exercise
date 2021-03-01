@@ -5,6 +5,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Footer from './components/Footer';
+import DetailsPage from './pages/DetailsPage';
+import Error from './pages/Error';
+import logo from './logo-intrasoft.svg'
+
 
 function App() {
   return (
@@ -12,7 +17,7 @@ function App() {
       <div>
         <div>
           <Navbar bg="light" variant="light">
-            <Navbar.Brand as={Link} to="/" >React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/" ><img src={logo} alt='intrasoft logo' className='logo' /></Navbar.Brand>
             <Navbar.Collapse>
               <Nav className="mr-auto">
                 <Nav.Link as={Link} to="/" >HOME</Nav.Link>
@@ -33,10 +38,14 @@ function App() {
             <Route exact path='/lifestyle' component={() => <MainPage articles='lifestyle' />} />
             <Route exact path='/travel' component={() => <MainPage articles='travel' />} />
             <Route exact path='/fashion' component={() => <MainPage articles='fashion' />} />
+            <Route exact path='/article/:id' component={() => <DetailsPage/>} />     
+            <Route exact path="*"><Error /></Route>     
           </Switch>
         </div>
       </div>
-      <div>Footer - Evangelia</div>
+      <div>        
+       <Footer/>       
+      </div>
     </div>
   );
 }
