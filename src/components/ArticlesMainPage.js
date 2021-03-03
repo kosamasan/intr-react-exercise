@@ -1,17 +1,14 @@
-import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
-
-
 
 const ArticlesMainPage = ({ articlesMainPage }) => {
 
     return (
         <Row>
             {articlesMainPage.map((item) =>
-                <Card style={{ width: '100%', margin: '20px' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card key={item.id} style={{ width: '100%', margin: '20px' }}>
+                <Card.Img variant="top" src={item.social_image} />
                 <Card.Body>
                   <Card.Title>{item.title}</Card.Title>
                   <Card.Text>
@@ -25,6 +22,7 @@ const ArticlesMainPage = ({ articlesMainPage }) => {
             )}
         </Row>
     );
+
 }
 
 export default ArticlesMainPage;

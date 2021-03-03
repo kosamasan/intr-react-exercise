@@ -7,7 +7,7 @@ const TopBanners = ({ topBanners }) => {
     return (
         <Row>
             {topBanners.map(item =>
-                <Col xs={4} style={{ padding: '0px' }}><Image src={item.social_image} fluid /></Col>
+                <Col key={item.id} xs={4} style={{ padding: '0px' }}><Image src={item.social_image} fluid /></Col>
             )}
         </Row>
     );

@@ -6,10 +6,12 @@ import TopBanners from '../components/TopBanners'
 import ArticlesMainPage from '../components/ArticlesMainPage'
 import RandomArticle from '../components/RandomArticles'
 import PopularArticles from '../components/PopularArticles'
+import { useParams, Link } from 'react-router-dom'
 
 const axios = require('axios')
 
 const MainPage = ({ articles }) => {
+    const { id, type } = useParams();
     const [list, setList] = useState([]);
     const [popular, setPopular] = useState([]);
     const [random, setRandom] = useState([]);
@@ -17,35 +19,26 @@ const MainPage = ({ articles }) => {
     const [articlesMainPage, setArticlesMainPage] = useState([]);
 
     useEffect(() => {
-       // if (articles === 'all') {
-            axios.get(`https://dev.to/api/articles?tag=${articles}`).then(resp => {
-                setList(resp.data)
-                setRandom(resp.data[Math.floor(Math.random() * resp.data.length)])
-                setTopBanners(resp.data.slice(0, 3))
-                setArticlesMainPage(resp.data.slice(3, 6))
-            });
-            axios.get('https://dev.to/api/articles?top=1&&per_page=3').then(resp => {
-                setPopular(resp.data)
-            });
-        // } else if (articles === 'lifestyle') {
-        //     axios.get('https://dev.to/api/articles').then(resp => {
-        //         console.log(resp.data)
-        //     });
-        // }
+        axios.get(`https://dev.to/api/articles?tag=${articles}`).then(resp => {
+            setList(resp.data)
+            setRandom(resp.data[Math.floor(Math.random() * resp.data.length)])
+            setTopBanners(resp.data.slice(0, 3))
+            setArticlesMainPage(resp.data.slice(3, 6))
+        });
+        axios.get(`https://dev.to/api/articles?tag=javascript&&top=1&&per_page=3`).then(resp => {
+            setPopular(resp.data)
+        });
     }, [articles])
 
 
     return (
         <div>
-            {list.length>0 && <Container fluid>
+            {list.length > 0 && <Container fluid>
                 <TopBanners topBanners={topBanners} />
             </Container>}
-            {list.length>0 &&<Container>
-                    
-                <Row style={{minHeight:'300px'}}>
-                    {/* <Col xs={0} md={1}>
-                        
-                    </Col> */}
+            {list.length > 0 && <Container style={{ marginTop: '30px' }}>
+
+                <Row style={{ minHeight: '300px' }}>
                     <Col xs={8} md={7}>
                         <ArticlesMainPage articlesMainPage={articlesMainPage} />
                     </Col>
@@ -53,12 +46,9 @@ const MainPage = ({ articles }) => {
                         <PopularArticles data={popular} />
                         <RandomArticle randomArticle={random} />
                     </Col>
-                    {/* <Col xs={0} md={1}>
-                        
-                    </Col> */}
                 </Row>
-            </Container> }
-            {list.length===0 && <div></div>}
+            </Container>}
+            {list.length === 0 && <div></div>}
         </div>
     );
 }
