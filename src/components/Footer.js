@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <Container fluid className="bg-primary">
       <Row>
-        <Col className="p-3 mb-2  text-white">Kosmas Antonis - DG1 , Ladas Vasilis - DG8 , Ziaka Evangelia - DG1</Col>
+        <Col className="p-3 mb-2  text-white text-center">Kosmas Antonis - DG1 , Ladas Vasilis - DG8 , Ziaka Evangelia - DG1</Col>
       </Row>
     </Container>
   );
