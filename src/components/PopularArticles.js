@@ -10,7 +10,7 @@ const convertDate = (dateAsString) => {
     return date.toLocaleDateString("en-US")
 }
 
-const Article = ({ id, image, date, comments, reactions, description, creator }) => {
+const Article = ({ id, image, date, comments, reactions, title, creator }) => {
     return (
         <Row className="item">
             <Col lg={5}>
@@ -19,7 +19,7 @@ const Article = ({ id, image, date, comments, reactions, description, creator })
                 </Link>
             </Col>
             <Col lg={7} style={{padding:"0"}}>
-                <p>{description}</p>
+                <p>{title}</p>
                 <Row>
                     <Col lg={3}>
                         <span>{creator}</span>
@@ -53,7 +53,7 @@ const PopularArticles = ({ data }) => {
                     ? (<div>
                         {
                             data.map((item) =>                        
-                                <Article key={item.id} creator={item.user.username} id={item.id} image={item.social_image} date={item.published_at} comments={item.comments_count} reactions={item.public_reactions_count} description={item.description} />
+                                <Article key={item.id} creator={item.user.username} id={item.id} image={item.social_image} date={item.published_at} comments={item.comments_count} reactions={item.public_reactions_count} title={item.title} />
                             )
                         }
                     </div>)

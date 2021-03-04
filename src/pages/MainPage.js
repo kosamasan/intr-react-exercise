@@ -19,14 +19,17 @@ const MainPage = ({ articles }) => {
     const [articlesMainPage, setArticlesMainPage] = useState([]);
 
     useEffect(() => {
-        console.log(articles);
+        
+        var popularUrl = "";
+        if(articles != "all") popularUrl = `&&tag=${articles}`;
+
         axios.get(`https://dev.to/api/articles?tag=${articles}`).then(resp => {            
             setList(resp.data)
             setRandom(resp.data[Math.floor(Math.random() * resp.data.length)])
             setTopBanners(resp.data.slice(0, 3))
             setArticlesMainPage(resp.data.slice(3, 6))
         });
-        axios.get(`https://dev.to/api/articles?tag=${articles}&&top=10&&per_page=3`).then(resp => {
+        axios.get(`https://dev.to/api/articles?top=10&&per_page=3${popularUrl}`).then(resp => {
             setPopular(resp.data)
         });
     }, [articles])

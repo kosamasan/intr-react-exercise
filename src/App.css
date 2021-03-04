@@ -72,6 +72,17 @@
   margin-bottom: 20px;
 }
 
-img{
+img{ 
   max-width: 100% !important;  
 }
+.tag_label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #007bff;
+  padding: 5px;
+  border-radius: 5px;
+  color:white;
+  font-size: 12px;
+}
+a {color:white;}
