@@ -12,7 +12,6 @@ const RandomArticles = ({ randomArticle }) => {
     useEffect(() => {
         let fetchArticle = randomArticle.tag_list && randomArticle.tag_list.length > 0 ? randomArticle.tag_list[0] : "";
         setItem(fetchArticle);
-        console.log(fetchArticle);
     }, [randomArticle])
 
     return (
@@ -24,10 +23,10 @@ const RandomArticles = ({ randomArticle }) => {
                     <hr />
                     <div style={{ position: "relative" }}>
                         <Link to={`/article/${randomArticle.id}/`}>
-                            {item != '' &&
+                            {item !== '' &&
                                 <span className="tag_label">{item}</span>
                             }
-                            <img img src={randomArticle.social_image} />
+                            <img img src={randomArticle.social_image} alt='' />
                         </Link>
                     </div>
                     <p>{randomArticle.title}</p>

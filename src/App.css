@@ -86,3 +86,14 @@ img{
   font-size: 12px;
 }
 a {color:white;}
+
+.active {
+  border-top: 3px solid #007bff;
+  margin-top: -3px;
+}
+
+.nav-link {
+  margin-left: 30px;
+  color: #282c34;
+  font-weight: 600;
+}

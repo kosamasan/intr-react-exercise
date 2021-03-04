@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container'
 
 export default function Error() {
   return (
-    <section className="error-page section">
-      <div className="error-container">
-        <h1> Error Page : No articles found</h1>
-        <Link to="/" className="btn btn-primary">
+    <Container style={{ marginTop: '30px', minHeight: '60vh' }}>
+        <h3> Error Page : No articles found</h3>
+        <Link to="/" className="btn btn-primary" style={{ marginTop: '40px'}}>
           Go Back To Home
         </Link>
-      </div>
-    </section>
+    </Container>
   );
 }
