@@ -6,6 +6,11 @@ import Figure from 'react-bootstrap/Figure'
 import ReactHtmlParser from "react-html-parser";
 import { Calendar4Week, EyeFill, ChatLeftTextFill } from 'react-bootstrap-icons';
 
+const convertDate = (dateAsString) => {
+    var date = new Date(dateAsString);
+    return date.toLocaleDateString("en-US")
+}
+
 const SingleArticle = ({ article, tag, creator }) => {
 
     return (
@@ -17,7 +22,7 @@ const SingleArticle = ({ article, tag, creator }) => {
                 <Figure.Caption>
                     <Row>
                         <Col></Col>
-                        <Col>{article.tag_list} </Col>
+                        <Col className='btn btn-primary btn-details'>{article.tag_list} </Col>
                         <Col></Col>
                     </Row>
                     <Row>
@@ -25,7 +30,7 @@ const SingleArticle = ({ article, tag, creator }) => {
                     </Row>
                     <Row>
                         <Col><h6> {creator} </h6></Col>
-                        <Col><h6> <Calendar4Week /> {article.published_at}</h6></Col>
+                        <Col><h6> <Calendar4Week /> {convertDate(article.published_at)}</h6></Col>
                         <Col><h6> <ChatLeftTextFill /> {article.comments_count} </h6></Col>
                         <Col><h6>  <EyeFill /> {article.public_reactions_count}</h6></Col>
                     </Row>
