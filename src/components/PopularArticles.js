@@ -21,16 +21,16 @@ const Article = ({ id, image, date, comments, reactions, title, creator }) => {
             <Col lg={7} style={{padding:"0"}}>
                 <p>{title}</p>
                 <Row>
-                    <Col lg={3}>
+                    <Col lg={4}>
                         <span>{creator}</span>
                     </Col>
-                    <Col style={{padding:"0"}} lg={3}>
+                    <Col style={{padding:"0"}} lg={4}>
                         <Calendar4Week /><span>{convertDate(date)}</span>
                     </Col>
-                    <Col style={{padding:"0"}} lg={3}>
+                    <Col style={{padding:"0"}} lg={2}>
                         <ChatLeftTextFill /> <span>{comments}</span>
                     </Col>
-                    <Col style={{padding:"0"}} lg={3}>
+                    <Col style={{padding:"0"}} lg={2}>
                         <EyeFill /><span>{reactions}</span>
                     </Col>
                 </Row>
