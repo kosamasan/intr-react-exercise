@@ -26,7 +26,7 @@ const DetailsPage = () => {
         axios.get(`https://dev.to/api/articles?tag=${type}`).then(resp => {
             setRandom(resp.data[Math.floor(Math.random() * resp.data.length)])
         });
-        axios.get('https://dev.to/api/articles?tag=lifestyle&&top=1&&per_page=3').then(resp => {
+        axios.get('https://dev.to/api/articles?tag=lifestyle&&top=10&&per_page=3').then(resp => {
             setPopular(resp.data)
         });
     }, [id])
