@@ -23,10 +23,10 @@ const RandomArticles = ({ randomArticle }) => {
                     <hr />
                     <div style={{ position: "relative" }}>
                         <Link to={`/article/${randomArticle.id}/`}>
-                            {item != '' &&
+                            {item !== '' &&
                                 <span className="tag_label">{item}</span>
                             }
-                            <img img src={randomArticle.social_image} />
+                            <img img src={randomArticle.social_image} alt='' />
                         </Link>
                     </div>
                     <p>{randomArticle.title}</p>

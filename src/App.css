@@ -84,4 +84,19 @@ img{
   border-radius: 5px;
   color:white;
   font-size: 12px;
+<<<<<<< HEAD
+=======
+}
+a {color:white;}
+
+.active {
+  border-top: 3px solid #007bff;
+  margin-top: -3px;
+}
+
+.nav-link {
+  margin-left: 30px;
+  color: #282c34;
+  font-weight: 600;
+>>>>>>> 33ca022a3449e9e9dd1fdae4b6d516510fd1cf49
 }

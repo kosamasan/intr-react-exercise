@@ -12,8 +12,7 @@ const ArticlesMainPage = ({ articlesMainPage }) => {
                 <Card.Body>
                   <Card.Title>{item.title}</Card.Title>
                   <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    {item.description}
                   </Card.Text>         
             
                   <Link to={`/article/${item.id}`} className='btn btn-primary btn-details'> details</Link>

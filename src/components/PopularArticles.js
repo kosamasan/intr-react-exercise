@@ -15,7 +15,7 @@ const Article = ({ id, image, date, comments, reactions, title, creator }) => {
         <Row className="item">
             <Col lg={5}>
                 <Link to={`/article/${id}`}>
-                    <img img src={image} />
+                    <img img src={image} alt='' />
                 </Link>
             </Col>
             <Col lg={7} style={{padding:"0"}}>
