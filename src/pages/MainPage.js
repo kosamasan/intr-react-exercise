@@ -27,7 +27,7 @@ const MainPage = ({ articles }) => {
             setTopBanners(resp.data.slice(0, 3))
             setArticlesMainPage(resp.data.slice(3, 6))
         });
-        axios.get(`https://dev.to/api/articles?top=10&&per_page=3${popularUrl}`).then(resp => {
+        axios.get(`https://dev.to/api/articles?top=80&&per_page=3${popularUrl}`).then(resp => {
             setPopular(resp.data)
         });
     }, [articles])

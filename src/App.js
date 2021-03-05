@@ -42,7 +42,7 @@ function App() {
             <Route exact path='/lifestyle' component={() => <MainPage articles='lifestyle' />} />
             <Route exact path='/travel' component={() => <MainPage articles='travel' />} />
             <Route exact path='/fashion' component={() => <MainPage articles='fashion' />} />            
-            <Route exact path='/article/:id/:type' component={() => <DetailsPage/>} />     
+            <Route exact path='/article/:id' component={() => <DetailsPage/>} />     
             <Route exact path='/gallery' component={() => <GalleryPage/>} />   
             <Route exact path='/contact' component={() => <ContactPage/>} />    
             <Route exact path="*"><Error /></Route>     
