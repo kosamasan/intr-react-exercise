@@ -12,7 +12,6 @@ const RandomArticles = ({ randomArticle }) => {
     useEffect(() => {
         let fetchArticle = randomArticle.tag_list && randomArticle.tag_list.length > 0 ? randomArticle.tag_list[0] : "";
         setItem(fetchArticle);
-        console.log(fetchArticle);
     }, [randomArticle])
 
     return (

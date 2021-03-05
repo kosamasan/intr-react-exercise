@@ -10,8 +10,8 @@ import DetailsPage from './pages/DetailsPage';
 import Error from './pages/Error';
 import logo from './logo-intrasoft.svg'
 
+function App() { 
 
-function App() {
   return (
     <div className="App">
       <div>
@@ -23,7 +23,7 @@ function App() {
                 <Nav.Link as={Link} to="/" >HOME</Nav.Link>
                 <Nav.Link as={Link} to="/lifestyle" >LIFESTYLE</Nav.Link>
                 <Nav.Link as={Link} to="/travel" >TRAVEL</Nav.Link>
-                <Nav.Link as={Link} to="/fashion" >FASHION</Nav.Link>                
+                <Nav.Link as={Link} to="/fashion" >FASHION</Nav.Link>
               </Nav>
               <Form inline>
                 <Form.Control type="text" placeholder="Search" className="mr-sm-2" />
@@ -37,14 +37,14 @@ function App() {
             <Route exact path='/' component={() => <MainPage articles='all' />} />
             <Route exact path='/lifestyle' component={() => <MainPage articles='lifestyle' />} />
             <Route exact path='/travel' component={() => <MainPage articles='travel' />} />
-            <Route exact path='/fashion' component={() => <MainPage articles='fashion' />} />            
-            <Route exact path='/article/:id' component={() => <DetailsPage/>} />     
-            <Route exact path="*"><Error /></Route>     
+            <Route exact path='/fashion' component={() => <MainPage articles='fashion' />} />
+            <Route exact path='/article/:id' component={() => <DetailsPage />} />
+            <Route exact path="*"><Error /></Route>
           </Switch>
         </div>
       </div>
-      <div>        
-       <Footer/>       
+      <div>
+        <Footer />
       </div>
     </div>
   );
