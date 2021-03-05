@@ -22,12 +22,12 @@ function App() {
             <Navbar.Brand as={Link} to="/" ><img src={logo} alt='intrasoft logo' className='logo' /></Navbar.Brand>
             <Navbar.Collapse>
               <Nav className="mr-auto">
-                <Nav.Link as={Link} to="/" >HOME</Nav.Link>
-                <Nav.Link as={Link} to="/lifestyle" >LIFESTYLE</Nav.Link>
-                <Nav.Link as={Link} to="/travel" >TRAVEL</Nav.Link>
-                <Nav.Link as={Link} to="/fashion" >FASHION</Nav.Link>
-                <Nav.Link as={Link} to="/gallery" >GALLERY</Nav.Link>
-                <Nav.Link as={Link} to="/contact" >CONTACT</Nav.Link>
+                <Nav.Link as={NavLink} exact to="/" >HOME</Nav.Link>
+                <Nav.Link as={NavLink} to="/lifestyle" >LIFESTYLE</Nav.Link>
+                <Nav.Link as={NavLink} to="/travel" >TRAVEL</Nav.Link>
+                <Nav.Link as={NavLink} to="/fashion" >FASHION</Nav.Link>
+                <Nav.Link as={NavLink} to="/gallery" >GALLERY</Nav.Link>
+                <Nav.Link as={NavLink} to="/contact" >CONTACT</Nav.Link>
               </Nav>
               <Form inline>
                 <Form.Control type="text" placeholder="Search" className="mr-sm-2" />
@@ -42,7 +42,7 @@ function App() {
             <Route exact path='/lifestyle' component={() => <MainPage articles='lifestyle' />} />
             <Route exact path='/travel' component={() => <MainPage articles='travel' />} />
             <Route exact path='/fashion' component={() => <MainPage articles='fashion' />} />            
-            <Route exact path='/article/:id' component={() => <DetailsPage/>} />     
+            <Route exact path='/article/:id/:type' component={() => <DetailsPage/>} />     
             <Route exact path='/gallery' component={() => <GalleryPage/>} />   
             <Route exact path='/contact' component={() => <ContactPage/>} />    
             <Route exact path="*"><Error /></Route>     

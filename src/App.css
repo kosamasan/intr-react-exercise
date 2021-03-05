@@ -85,3 +85,10 @@ img{
   color:white;
   font-size: 12px;
 }
+
+.active{
+  border-top:3px solid #007bff;
+  margin-top: -3px;
+  color:#007bff !important;
+  font-weight: 600;
+}
